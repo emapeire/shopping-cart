@@ -2,13 +2,13 @@
 import { useState } from 'react'
 import './Filters.css'
 
-export default function Filters({ onChange }) {
+export default function Filters({ changeFilters }) {
   const [minPrice, setMinPrice] = useState(0)
 
   const handleChangePrice = (event) => {
     setMinPrice(event.target.value)
     // TODO! this is not a good practice
-    onChange((prevState) => ({
+    changeFilters((prevState) => ({
       ...prevState,
       minPrice: Number(event.target.value)
     }))
@@ -16,7 +16,7 @@ export default function Filters({ onChange }) {
 
   const handleChangeCategory = (event) => {
     // TODO! this is not a good practice
-    onChange((prevState) => ({
+    changeFilters((prevState) => ({
       ...prevState,
       category: event.target.value
     }))

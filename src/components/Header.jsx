@@ -5,7 +5,7 @@ export default function Header({ changeFilters }) {
   return (
     <header>
       <h1>React Shopping Cart 🛒</h1>
-      <Filters onChange={changeFilters} />
+      <Filters changeFilters={changeFilters} />
     </header>
   )
 }

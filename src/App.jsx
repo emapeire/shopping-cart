@@ -9,6 +9,7 @@ export default function App() {
     category: 'all',
     minPrice: 0
   })
+
   const filterProducts = (products) => {
     return products.filter((product) => {
       return (
@@ -17,7 +18,6 @@ export default function App() {
       )
     })
   }
-
   const filteredProducts = filterProducts(products)
 
   return (
