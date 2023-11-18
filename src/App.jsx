@@ -8,12 +8,12 @@ import { IS_DEV } from './config.js'
 
 export default function App() {
   const [products] = useState(initialProducts)
-  const { filters, setFilters, filterProducts } = useFilters()
+  const { filters, filterProducts } = useFilters()
   const filteredProducts = filterProducts(products)
 
   return (
     <>
-      <Header changeFilters={setFilters} />
+      <Header />
       <Products products={filteredProducts} />
       {IS_DEV && <Footer filters={filters} />}
     </>

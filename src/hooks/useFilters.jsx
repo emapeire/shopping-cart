@@ -12,5 +12,5 @@ export default function useFilters() {
       )
     })
   }
-  return { filters, setFilters, filterProducts }
+  return { filters, changeFilters: setFilters, filterProducts }
 }

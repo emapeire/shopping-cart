@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useState, useId } from 'react'
 import './Filters.css'
+import useFilters from '../hooks/useFilters'
 
-export default function Filters({ changeFilters }) {
+export default function Filters() {
+  const { changeFilters } = useFilters()
   const [minPrice, setMinPrice] = useState(0)
   const minPriceFilterId = useId()
   const categoryFilterId = useId()
