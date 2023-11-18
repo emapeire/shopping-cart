@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState, useId } from 'react'
 import './Filters.css'
 import useFilters from '../hooks/useFilters'
