@@ -18,8 +18,27 @@ const UPDATE_STATE_BY_ACTION_TYPE = {
     const productInCartIndex = state.findIndex((item) => item.id === id)
     // If it's in cart, update quantity
     if (productInCartIndex >= 0) {
-      const newState = structuredClone(state)
-      newState[productInCartIndex].quantity += 1
+      // structuredClone() case
+      // const newState = structuredClone(state)
+      // newState[productInCartIndex].quantity += 1
+
+      // mapping() with ...spread operator case
+      // const newState = state.map((item) => {
+      //   if (item.id === id) {
+      //     return { ...item, quantity: item.quantity + 1 }
+      //   }
+      //   return item
+      // })
+
+      // slice() with ...spread operator case
+      const newState = [
+        ...state.slice(0, productInCartIndex),
+        {
+          ...state[productInCartIndex],
+          quantity: state[productInCartIndex].quantity + 1
+        },
+        ...state.slice(productInCartIndex + 1)
+      ]
       updateLocalStorage(newState)
       return newState
     }
