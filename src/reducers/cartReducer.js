@@ -19,8 +19,8 @@ const UPDATE_STATE_BY_ACTION_TYPE = {
     // If it's in cart, update quantity
     if (productInCartIndex >= 0) {
       // structuredClone() case
-      // const newState = structuredClone(state)
-      // newState[productInCartIndex].quantity += 1
+      const newState = structuredClone(state)
+      newState[productInCartIndex].quantity += 1
 
       // mapping() with ...spread operator case
       // const newState = state.map((item) => {
@@ -31,14 +31,14 @@ const UPDATE_STATE_BY_ACTION_TYPE = {
       // })
 
       // slice() with ...spread operator case
-      const newState = [
-        ...state.slice(0, productInCartIndex),
-        {
-          ...state[productInCartIndex],
-          quantity: state[productInCartIndex].quantity + 1
-        },
-        ...state.slice(productInCartIndex + 1)
-      ]
+      // const newState = [
+      //   ...state.slice(0, productInCartIndex),
+      //   {
+      //     ...state[productInCartIndex],
+      //     quantity: state[productInCartIndex].quantity + 1
+      //   },
+      //   ...state.slice(productInCartIndex + 1)
+      // ]
       updateLocalStorage(newState)
       return newState
     }
@@ -54,8 +54,8 @@ const UPDATE_STATE_BY_ACTION_TYPE = {
     return newState
   },
   [CART_ACTIONS_TYPES.CLEAR_CART]: () => {
-    updateLocalStorage(cartInitialState)
-    return cartInitialState
+    updateLocalStorage([])
+    return []
   }
 }
 
