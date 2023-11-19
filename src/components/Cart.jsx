@@ -1,7 +1,7 @@
 import { useId } from 'react'
 import { CartIcon, ClearCartIcon } from './Icons.jsx'
 import './Cart.css'
-import useCart from '../hooks/useCart.jsx'
+import useCart from '../hooks/useCart'
 import { CartItem } from './CartItem.jsx'
 
 export default function Cart() {
