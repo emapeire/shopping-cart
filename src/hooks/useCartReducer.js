@@ -3,7 +3,7 @@ import {
   cartReducer,
   cartInitialState,
   CART_ACTIONS_TYPES
-} from '../reducers/CartReducer'
+} from '../reducers/cartReducer'
 
 export function useCartReducer() {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState)

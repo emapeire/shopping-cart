@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext } from 'react'
-import { useCartReducer } from '../reducers/CartReducer'
+import { useCartReducer } from '../hooks/useCartReducer'
 
 export const CartContext = createContext()
 
