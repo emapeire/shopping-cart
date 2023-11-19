@@ -20,17 +20,7 @@ export const cartReducer = (state, action) => {
     }
     case 'REMOVE_FROM_CART': {
       const { id } = actionPayload
-      const productInCartIndex = state.findIndex((item) => item.id === id)
-
-      // If it's not in cart, do nothing
-      if (productInCartIndex === -1) {
-        return state
-      }
-
-      // If it's in cart, remove it
-      const newState = structuredClone(state)
-      newState.splice(productInCartIndex, 1)
-      return newState
+      return state.filter((item) => item.id !== id)
     }
     case 'CLEAR_CART': {
       return cartInitialState
